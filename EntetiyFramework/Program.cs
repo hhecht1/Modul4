@@ -13,6 +13,7 @@ namespace EntetiyFramework
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public DateTime EnrollmentDate { get; set; }
+        public string Fach { get; set; } = null!;
 
     }
 
@@ -39,9 +40,10 @@ namespace EntetiyFramework
             {
                 var student = new Student
                 {
-                    FirstName = "John",
+                    FirstName = "Fritz",
                     LastName = "Doe",
-                    EnrollmentDate = DateTime.Now
+                    EnrollmentDate = DateTime.Now,
+                    Fach = "DEPPENSTUDIUM"
                 };
                 context.Students.Add(student);
                 context.SaveChanges();
