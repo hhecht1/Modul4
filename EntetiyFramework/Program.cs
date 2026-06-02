@@ -45,6 +45,13 @@ namespace EntetiyFramework
                     EnrollmentDate = DateTime.Now,
                     Fach = "DEPPENSTUDIUM"
                 };
+                new Student
+                {
+                    FirstName = "Heinze",
+                    LastName = "Doe",
+                    EnrollmentDate = DateTime.Now,
+                    Fach = "mathe"
+                };
                 context.Students.Add(student);
                 context.SaveChanges();
             }

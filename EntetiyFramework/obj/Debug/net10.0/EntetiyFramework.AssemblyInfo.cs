@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EntetiyFramework")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8f541b0f23beff2908fb3f4631d242a7496b914")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cdeaf71e93b688ba5b333a9a2b47c2fc57e1fda9")]
 [assembly: System.Reflection.AssemblyProductAttribute("EntetiyFramework")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EntetiyFramework")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
