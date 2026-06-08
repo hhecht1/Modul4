@@ -43,9 +43,9 @@ namespace EntetiyFramework
                     FirstName = "Fritz",
                     LastName = "Doe",
                     EnrollmentDate = DateTime.Now,
-                    Fach = "DEPPENSTUDIUM"
+                    Fach = "informatik"
                 };
-                new Student
+                var student2 = new Student
                 {
                     FirstName = "Heinze",
                     LastName = "Doe",
@@ -53,8 +53,11 @@ namespace EntetiyFramework
                     Fach = "mathe"
                 };
                 context.Students.Add(student);
+                context.Students.Add(student2);
                 context.SaveChanges();
             }
+
+
         }
     }
 }
