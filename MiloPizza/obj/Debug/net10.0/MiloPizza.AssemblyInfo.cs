@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiloPizza")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5edb30c536032dacf8a40d52bb96aafe0c1e6efa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4abed1e69139588646cd42a1af69043abd7c4a9")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiloPizza")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiloPizza")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
