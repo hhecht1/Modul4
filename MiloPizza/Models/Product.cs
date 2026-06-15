@@ -10,7 +10,7 @@ namespace PizzaService.Models
     {
         //[Key]
         public int Id { get; set; }
-        public string Name { get; set; } = null!;  // Unterdrückt null Warnung, soll in db aber nicht null sein
+        public string? Name { get; set; } = "";  // Unterdrückt null Warnung, soll in db aber nicht null sein
 
         //[Required]
         //public string Name? { get; set; }
