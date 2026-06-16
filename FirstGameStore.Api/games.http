@@ -1,0 +1,55 @@
+
+  GET http://localhost:5134
+
+###
+
+
+ GET http://localhost:5134/games
+
+
+###
+
+
+
+ GET http://localhost:5134/games/6
+
+###
+
+
+
+GET http://localhost:5134/games/price/50
+
+###
+
+Get http://localhost:5134/games/genre/RPG
+
+###
+
+POST http://localhost:5134/games
+Content-Type: application/json
+
+{
+
+  "name": "Super Mario Bros",
+  "genre": "Platformer",
+  "price": 59.99,
+  "releaseDate": "2023-10-20"
+}
+
+###
+
+
+PUT http://localhost:5134/games/
+Content-Type: application/json
+
+{
+  "name": "Super Mario Bros III",
+  "genre": "Platformer",
+  "price": 9.99,
+  "releaseDate": "2023-10-20"
+}
+
+###
+
+
+DELETE http://localhost:5134/games/27
