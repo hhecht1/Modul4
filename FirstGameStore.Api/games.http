@@ -1,17 +1,17 @@
 
-  GET http://localhost:5134
+GET http://localhost:5134
 
 ###
 
 
- GET http://localhost:5134/games
+GET http://localhost:5134/games
 
 
 ###
 
 
 
- GET http://localhost:5134/games/6
+GET http://localhost:5134/games/6
 
 ###
 
@@ -53,3 +53,7 @@ Content-Type: application/json
 
 
 DELETE http://localhost:5134/games/27
+
+###
+
+Get http://localhost:5134/games/30
