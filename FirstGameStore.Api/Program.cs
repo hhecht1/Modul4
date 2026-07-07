@@ -12,7 +12,8 @@ public class Program
         var app = builder.Build();  // Instanz der WebApplication (Host)
 
         // HTTP-Pipeline, hier wird definiert was bei http-requests passiert
-        app.MapGet("/", () => "Hello World!");
+        app.UseDefaultFiles();  // Lädt index.html automatisch
+        app.UseStaticFiles();   // Stellt Dateien aus wwwroot bereit
 
 
         app.MapGamesEndpoints();
