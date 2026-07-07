@@ -1,3 +1,5 @@
+namespace FirstGameStore.Api.Dtos;
+
 public record GamesDto
 (
     int Id,
