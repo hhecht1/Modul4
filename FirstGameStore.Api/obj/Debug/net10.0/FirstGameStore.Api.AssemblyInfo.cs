@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FirstGameStore.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b471108c024ab4041e7942a5e68dff49c6facf5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e84262cf36a3aa0b42d3349434b270f71a070a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("FirstGameStore.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FirstGameStore.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
