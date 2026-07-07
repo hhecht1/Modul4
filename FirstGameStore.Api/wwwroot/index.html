@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Store</title>
+  <style>
+    body { font-family: sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    h1 { color: #333; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+    th { background: #f4f4f4; }
+    tr:hover { background: #fafafa; }
+    .btn { padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 0.85rem; }
+    .btn-edit { background: #4CAF50; color: white; }
+    .btn-delete { background: #e53935; color: white; }
+    .btn-create { background: #1976D2; color: white; display: inline-block; margin-bottom: 20px; }
+    .btn:hover { opacity: 0.85; }
+    #message { margin: 10px 0; padding: 10px; border-radius: 4px; display: none; }
+    .success { background: #e8f5e9; color: #2e7d32; display: block !important; }
+    .error   { background: #ffebee; color: #c62828; display: block !important; }
+  </style>
+</head>
+<body>
+  <h1>🎮 Game Store</h1>
+  <a class="btn btn-create" href="create.html">+ Neues Spiel erstellen</a>
+  <div id="message"></div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Genre</th>
+        <th>Preis (CHF)</th>
+        <th>Erscheinungsdatum</th>
+        <th>Aktionen</th>
+      </tr>
+    </thead>
+    <tbody id="gamesTableBody">
+      <tr><td colspan="6">Lade Spiele…</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    const API = '/games';
+
+    async function loadGames() {
+      const res = await fetch(API);
+      const games = await res.json();
+      const tbody = document.getElementById('gamesTableBody');
+      if (games.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6">Keine Spiele vorhanden.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = games.map(g => `
+        <tr>
+          <td>${g.id}</td>
+          <td>${g.name}</td>
+          <td>${g.genre}</td>
+          <td>${g.price.toFixed(2)}</td>
+          <td>${g.releaseDate}</td>
+          <td>
+            <a class="btn btn-edit" href="edit.html?id=${g.id}">Bearbeiten</a>
+            <button class="btn btn-delete" onclick="deleteGame(${g.id})">Löschen</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    async function deleteGame(id) {
+      if (!confirm('Spiel wirklich löschen?')) return;
+      const res = await fetch(`${API}/${id}`, { method: 'DELETE' });
+      const msg = document.getElementById('message');
+      if (res.ok) {
+        msg.textContent = 'Spiel erfolgreich gelöscht.';
+        msg.className = 'success';
+        loadGames();
+      } else {
+        msg.textContent = 'Fehler beim Löschen.';
+        msg.className = 'error';
+      }
+    }
+
+    loadGames();
+  </script>
+</body>
+</html>

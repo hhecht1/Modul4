@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spiel erstellen – Game Store</title>
+  <style>
+    body { font-family: sans-serif; max-width: 500px; margin: 40px auto; padding: 0 20px; }
+    h1 { color: #333; }
+    label { display: block; margin-top: 16px; font-weight: bold; }
+    input { width: 100%; padding: 8px; margin-top: 4px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+    .btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; margin-top: 20px; }
+    .btn-submit { background: #1976D2; color: white; }
+    .btn-back   { background: #757575; color: white; margin-left: 10px; text-decoration: none; display: inline-block; }
+    .btn:hover { opacity: 0.85; }
+    #message { margin-top: 16px; padding: 10px; border-radius: 4px; display: none; }
+    .success { background: #e8f5e9; color: #2e7d32; display: block !important; }
+    .error   { background: #ffebee; color: #c62828; display: block !important; }
+  </style>
+</head>
+<body>
+  <h1>🎮 Neues Spiel erstellen</h1>
+  <form id="createForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="z.B. The Legend of Zelda" required />
+
+    <label for="genre">Genre</label>
+    <input type="text" id="genre" placeholder="z.B. Action, RPG, Sport" required />
+
+    <label for="price">Preis (CHF)</label>
+    <input type="number" id="price" step="0.01" min="0" placeholder="z.B. 49.90" required />
+
+    <label for="releaseDate">Erscheinungsdatum</label>
+    <input type="date" id="releaseDate" required />
+
+    <div>
+      <button type="submit" class="btn btn-submit">Spiel speichern</button>
+      <a href="index.html" class="btn btn-back">Zurück</a>
+    </div>
+  </form>
+  <div id="message"></div>
+
+  <script>
+    document.getElementById('createForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const msg = document.getElementById('message');
+
+      const body = {
+        name:        document.getElementById('name').value,
+        genre:       document.getElementById('genre').value,
+        price:       parseFloat(document.getElementById('price').value),
+        releaseDate: document.getElementById('releaseDate').value
+      };
+
+      const res = await fetch('/games', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+
+      if (res.ok) {
+        msg.textContent = 'Spiel erfolgreich erstellt!';
+        msg.className = 'success';
+        e.target.reset();
+      } else {
+        const text = await res.text();
+        msg.textContent = 'Fehler: ' + (text || res.statusText);
+        msg.className = 'error';
+      }
+    });
+  </script>
+</body>
+</html>
