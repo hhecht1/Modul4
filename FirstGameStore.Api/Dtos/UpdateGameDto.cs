@@ -1,9 +1,10 @@
+using System.ComponentModel.DataAnnotations;
+
+namespace FirstGameStore.Api.Dtos;
+
 public record UpdateGameDto(
-
-
-    int Id,
-    string Name,
-    string Genre,
-    decimal Price,
+    [Required] string Name,
+    [Required] string Genre,
+    [Range(0, double.MaxValue)] decimal Price,
     DateOnly ReleaseDate
 );
