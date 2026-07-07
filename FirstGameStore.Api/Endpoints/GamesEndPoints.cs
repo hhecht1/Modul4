@@ -35,7 +35,14 @@ public static class GamesEndpoints
             new GamesDto(25, "Valorant", "FPS", 0.00m, new DateOnly(2020, 6, 2)),
             new GamesDto(26, "Stardew Valley", "Simulation", 14.99m, new DateOnly(2016, 2, 28)),
             new GamesDto(27, "The Sims 4", "Simulation", 39.99m, new DateOnly(2014, 9, 2))
+
+
+
     ];
+
+
+
+
 
     public static RouteGroupBuilder MapGamesEndpoints(this WebApplication app)
     {
@@ -73,6 +80,7 @@ public static class GamesEndpoints
         group.MapGet("/genre/{genre}",
             (string genre) =>
                 games.Where(g => g.Genre == genre));
+
 
 
 
