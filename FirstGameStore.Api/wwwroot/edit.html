@@ -4,92 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Spiel bearbeiten – Game Store</title>
-  <style>
-    body { font-family: sans-serif; max-width: 500px; margin: 40px auto; padding: 0 20px; }
-    h1 { color: #333; }
-    label { display: block; margin-top: 16px; font-weight: bold; }
-    input { width: 100%; padding: 8px; margin-top: 4px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-    .btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; margin-top: 20px; }
-    .btn-submit { background: #4CAF50; color: white; }
-    .btn-back   { background: #757575; color: white; margin-left: 10px; text-decoration: none; display: inline-block; }
-    .btn:hover { opacity: 0.85; }
-    #message { margin-top: 16px; padding: 10px; border-radius: 4px; display: none; }
-    .success { background: #e8f5e9; color: #2e7d32; display: block !important; }
-    .error   { background: #ffebee; color: #c62828; display: block !important; }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <h1>✏️ Spiel bearbeiten</h1>
-  <form id="editForm">
-    <label for="name">Name</label>
-    <input type="text" id="name" required />
+<body class="form-page">
+  <div class="content-panel">
+    <h1>✏️ Spiel bearbeiten</h1>
 
-    <label for="genre">Genre</label>
-    <input type="text" id="genre" required />
+    <form id="editForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" required />
 
-    <label for="price">Preis (CHF)</label>
-    <input type="number" id="price" step="0.01" min="0" required />
+      <label for="genre">Genre</label>
+      <select id="genre" required></select>
 
-    <label for="releaseDate">Erscheinungsdatum</label>
-    <input type="date" id="releaseDate" required />
+      <label for="price">Preis (€)</label>
+      <input type="number" id="price" step="0.01" min="0" required />
 
-    <div>
-      <button type="submit" class="btn btn-submit">Änderungen speichern</button>
-      <a href="index.html" class="btn btn-back">Zurück</a>
-    </div>
-  </form>
-  <div id="message"></div>
+      <label for="releaseDate">Erscheinungsdatum</label>
+      <input type="date" id="releaseDate" required />
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
+      <div class="actions">
+        <button type="submit" class="btn btn-submit">Änderungen speichern</button>
+        <a href="index.html" class="btn btn-back">Zurück</a>
+      </div>
+    </form>
 
-    async function loadGame() {
-      if (!id) { showError('Keine Spiel-ID angegeben.'); return; }
-      const res = await fetch(`/games/${id}`);
-      if (!res.ok) { showError('Spiel nicht gefunden.'); return; }
-      const game = await res.json();
-      document.getElementById('name').value        = game.name;
-      document.getElementById('genre').value       = game.genre;
-      document.getElementById('price').value       = game.price;
-      document.getElementById('releaseDate').value = game.releaseDate;
-    }
+    <div id="message"></div>
+  </div>
 
-    document.getElementById('editForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const msg = document.getElementById('message');
-
-      const body = {
-        name:        document.getElementById('name').value,
-        genre:       document.getElementById('genre').value,
-        price:       parseFloat(document.getElementById('price').value),
-        releaseDate: document.getElementById('releaseDate').value
-      };
-
-      const res = await fetch(`/games/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
-
-      if (res.ok) {
-        msg.textContent = 'Spiel erfolgreich aktualisiert!';
-        msg.className = 'success';
-      } else {
-        const text = await res.text();
-        msg.textContent = 'Fehler: ' + (text || res.statusText);
-        msg.className = 'error';
-      }
-    });
-
-    function showError(text) {
-      const msg = document.getElementById('message');
-      msg.textContent = text;
-      msg.className = 'error';
-      document.getElementById('editForm').style.display = 'none';
-    }
-
-    loadGame();
-  </script>
+  <script src="js/common.js"></script>
+  <script src="js/edit.js"></script>
 </body>
 </html>

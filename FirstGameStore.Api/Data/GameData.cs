@@ -33,6 +33,28 @@ public static class GameData
         new GamesDto(25, "Valorant",                                "FPS",               0.00m, new DateOnly(2020, 6,  2)),
         new GamesDto(26, "Stardew Valley",                          "Simulation",       14.99m, new DateOnly(2016, 2,  28)),
         new GamesDto(27, "The Sims 4",                              "Simulation",       39.99m, new DateOnly(2014, 9,  2)),
+        new GamesDto(28, "Persona 5 Royal",                         "JRPG",             59.99m, new DateOnly(2019, 10, 31)),
+        new GamesDto(29, "Final Fantasy VII Remake",                "JRPG",             59.99m, new DateOnly(2020, 4,  10)),
+        new GamesDto(30, "Monster Hunter: World",                   "Action-RPG",       39.99m, new DateOnly(2018, 1,  26)),
+        new GamesDto(31, "Hollow Knight",                           "Metroidvania",     14.99m, new DateOnly(2017, 2,  24)),
+        new GamesDto(32, "Celeste",                                 "Platformer",        19.99m, new DateOnly(2018, 1,  25)),
+        new GamesDto(33, "Dark Souls III",                          "Action-RPG",       39.99m, new DateOnly(2016, 3,  24)),
+        new GamesDto(34, "Bloodborne",                              "Action-RPG",       39.99m, new DateOnly(2015, 3,  24)),
+        new GamesDto(35, "Sekiro: Shadows Die Twice",               "Action-Adventure", 59.99m, new DateOnly(2019, 3,  22)),
+        new GamesDto(36, "Hades",                                   "Roguelike",        24.99m, new DateOnly(2020, 9,  17)),
+        new GamesDto(37, "Portal 2",                                "Puzzle",           19.99m, new DateOnly(2011, 4,  19)),
+        new GamesDto(38, "Half-Life: Alyx",                         "FPS",              59.99m, new DateOnly(2020, 3,  23)),
+        new GamesDto(39, "Bioshock Infinite",                       "FPS",              39.99m, new DateOnly(2013, 3,  26)),
+        new GamesDto(40, "The Last of Us Part I",                   "Action-Adventure", 69.99m, new DateOnly(2022, 9,  2)),
+        new GamesDto(41, "God of War Ragnarök",                     "Action-Adventure", 69.99m, new DateOnly(2022, 11, 9)),
+        new GamesDto(42, "Uncharted 4: A Thief's End",              "Action-Adventure", 39.99m, new DateOnly(2016, 5,  10)),
+        new GamesDto(43, "Astro's Playroom",                        "Platformer",       29.99m, new DateOnly(2020, 11, 12)),
+        new GamesDto(44, "Ratchet & Clank: Rift Apart",             "Action-Adventure", 69.99m, new DateOnly(2021, 6,  11)),
+        new GamesDto(45, "Spider-Man: Miles Morales",               "Action-Adventure", 49.99m, new DateOnly(2020, 11, 12)),
+        new GamesDto(46, "Splatoon 3",                              "Shooter",          59.99m, new DateOnly(2022, 9,  9)),
+        new GamesDto(47, "Mario Kart 8 Deluxe",                     "Racing",           59.99m, new DateOnly(2017, 4,  28)),
+        new GamesDto(48, "The Legend of Zelda: Tears of the Kingdom", "Action-Adventure", 69.99m, new DateOnly(2023, 5, 12)),
+
 
     ];
 }
