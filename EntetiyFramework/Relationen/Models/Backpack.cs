@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Relationen.Models
 {
-    internal class Backpack
+    public class Backpack
     {
         public int Id { get; set; }
         public string? Description { get; set; }

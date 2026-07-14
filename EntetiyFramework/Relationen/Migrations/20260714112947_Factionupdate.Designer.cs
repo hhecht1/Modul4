@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Relationen.Data;
 
@@ -10,9 +11,11 @@ using Relationen.Data;
 namespace Relationen.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20260714112947_Factionupdate")]
+    partial class Factionupdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,8 +55,7 @@ namespace Relationen.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CharacterId")
-                        .IsUnique();
+                    b.HasIndex("CharacterId");
 
                     b.ToTable("Backpacks");
                 });
@@ -129,8 +131,8 @@ namespace Relationen.Migrations
             modelBuilder.Entity("Relationen.Models.Backpack", b =>
                 {
                     b.HasOne("Relationen.Models.Character", "Character")
-                        .WithOne("Backpack")
-                        .HasForeignKey("Relationen.Models.Backpack", "CharacterId")
+                        .WithMany()
+                        .HasForeignKey("CharacterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -140,17 +142,10 @@ namespace Relationen.Migrations
             modelBuilder.Entity("Relationen.Models.Weapons", b =>
                 {
                     b.HasOne("Relationen.Models.Character", "Character")
-                        .WithMany("Weapons")
+                        .WithMany()
                         .HasForeignKey("CharacterId");
 
                     b.Navigation("Character");
-                });
-
-            modelBuilder.Entity("Relationen.Models.Character", b =>
-                {
-                    b.Navigation("Backpack");
-
-                    b.Navigation("Weapons");
                 });
 #pragma warning restore 612, 618
         }

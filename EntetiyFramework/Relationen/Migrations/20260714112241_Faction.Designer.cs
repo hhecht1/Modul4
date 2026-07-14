@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Relationen.Data;
 
@@ -10,9 +11,11 @@ using Relationen.Data;
 namespace Relationen.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20260714112241_Faction")]
+    partial class Faction
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,21 +23,6 @@ namespace Relationen.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("CharacterFaction", b =>
-                {
-                    b.Property<int>("CharactersId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("FactionsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CharactersId", "FactionsId");
-
-                    b.HasIndex("FactionsId");
-
-                    b.ToTable("CharacterFaction");
-                });
 
             modelBuilder.Entity("Relationen.Models.Backpack", b =>
                 {
@@ -74,22 +62,6 @@ namespace Relationen.Migrations
                     b.ToTable("Characters");
                 });
 
-            modelBuilder.Entity("Relationen.Models.Faction", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Faction");
-                });
-
             modelBuilder.Entity("Relationen.Models.Weapons", b =>
                 {
                     b.Property<int>("Id")
@@ -111,21 +83,6 @@ namespace Relationen.Migrations
                     b.ToTable("Weapons");
                 });
 
-            modelBuilder.Entity("CharacterFaction", b =>
-                {
-                    b.HasOne("Relationen.Models.Character", null)
-                        .WithMany()
-                        .HasForeignKey("CharactersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Relationen.Models.Faction", null)
-                        .WithMany()
-                        .HasForeignKey("FactionsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Relationen.Models.Backpack", b =>
                 {
                     b.HasOne("Relationen.Models.Character", "Character")
@@ -140,7 +97,7 @@ namespace Relationen.Migrations
             modelBuilder.Entity("Relationen.Models.Weapons", b =>
                 {
                     b.HasOne("Relationen.Models.Character", "Character")
-                        .WithMany("Weapons")
+                        .WithMany()
                         .HasForeignKey("CharacterId");
 
                     b.Navigation("Character");
@@ -149,8 +106,6 @@ namespace Relationen.Migrations
             modelBuilder.Entity("Relationen.Models.Character", b =>
                 {
                     b.Navigation("Backpack");
-
-                    b.Navigation("Weapons");
                 });
 #pragma warning restore 612, 618
         }

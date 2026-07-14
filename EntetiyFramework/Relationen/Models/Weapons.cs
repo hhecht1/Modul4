@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Relationen.Models
 {
-    internal class Weapons
+    public class Weapons
     {
         public int Id { get; set; }
         public string? Name { get; set; }
