@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Relationen.Data;
 
@@ -10,9 +11,11 @@ using Relationen.Data;
 namespace Relationen.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20260714132227_ruleupdate")]
+    partial class ruleupdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,7 +36,7 @@ namespace Relationen.Migrations
 
                     b.HasIndex("FactionsId");
 
-                    b.ToTable("CharacterFactions", (string)null);
+                    b.ToTable("CharacterFaction");
                 });
 
             modelBuilder.Entity("Relationen.Models.Backpack", b =>
@@ -141,8 +144,7 @@ namespace Relationen.Migrations
                 {
                     b.HasOne("Relationen.Models.Character", "Character")
                         .WithMany("Weapons")
-                        .HasForeignKey("CharacterId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CharacterId");
 
                     b.Navigation("Character");
                 });

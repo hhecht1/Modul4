@@ -32,6 +32,26 @@ namespace Relationen.Data
             optionsBuilder.UseSqlServer(connectionString);
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Character>()
+                .HasOne(c => c.Backpack)
+                .WithOne(b => b.Character)
+                .HasForeignKey<Backpack>(b => b.CharacterId);
+
+            modelBuilder.Entity<Character>()
+                .HasMany(c => c.Weapons)
+                .WithOne(w => w.Character)
+                .HasForeignKey(w => w.CharacterId)
+                .OnDelete(DeleteBehavior.Cascade); // Löscht Waffen, wenn Charakter gelöscht wird
+
+            modelBuilder.Entity<Character>()
+                .HasMany(c => c.Factions)
+                .WithMany(f => f.Characters)
+                .UsingEntity(j => j.ToTable("CharacterFactions")); // Optional: Eigener Name für die Join-Tabelle
+        }
+
+
 
 
 

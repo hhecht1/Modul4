@@ -72,24 +72,24 @@ namespace Relationen
             //     }
             // }
 
-            // 20 neue Characters mit zufälligen Namen erstellen
-            var random = new Random();
-            var firstNames = new[] { "Liam", "Noah", "Oliver", "Elijah", "James", "William", "Benjamin", "Lucas", "Henry", "Alexander",
-                "Mason", "Michael", "Ethan", "Daniel", "Jacob", "Logan", "Jackson", "Levi", "Sebastian", "Mateo",
-                "Jack", "Owen", "Theodore", "Aiden", "Samuel", "Joseph", "John", "David", "Wyatt", "Matthew",
-                "Luke", "Asher", "Carter", "Julian", "Grayson", "Leo", "Jayden", "Gabriel", "Isaac",
-                // Füge hier weitere Namen hinzu, um die Liste auf 100 zu erweitern
-                // ...
-            };
+            // // 20 neue Characters mit zufälligen Namen erstellen
+            // var random = new Random();
+            // var firstNames = new[] { "Liam", "Noah", "Oliver", "Elijah", "James", "William", "Benjamin", "Lucas", "Henry", "Alexander",
+            //     "Mason", "Michael", "Ethan", "Daniel", "Jacob", "Logan", "Jackson", "Levi", "Sebastian", "Mateo",
+            //     "Jack", "Owen", "Theodore", "Aiden", "Samuel", "Joseph", "John", "David", "Wyatt", "Matthew",
+            //     "Luke", "Asher", "Carter", "Julian", "Grayson", "Leo", "Jayden", "Gabriel", "Isaac",
+            //     // Füge hier weitere Namen hinzu, um die Liste auf 100 zu erweitern
+            //     // ...
+            // };
 
-            for (int i = 0; i < 20; i++)
-            {
-                var randomName = firstNames[random.Next(firstNames.Length)];
-                var newCharacter = new Character { Name = randomName };
-                dbContext.Characters.Add(newCharacter);
-            }
-            dbContext.SaveChanges();
-            Console.WriteLine("20 neue Characters wurden hinzugefügt.");
+            // for (int i = 0; i < 20; i++)
+            // {
+            //     var randomName = firstNames[random.Next(firstNames.Length)];
+            //     var newCharacter = new Character { Name = randomName };
+            //     dbContext.Characters.Add(newCharacter);
+            // }
+            // dbContext.SaveChanges();
+            // Console.WriteLine("20 neue Characters wurden hinzugefügt.");
 
             // var random = new Random();
             // var weaponNames = new[] { "Sword", "Bow", "Axe", "Dagger", "Staff", "Mace", "Spear", "Crossbow", "Hammer", "Flail", "Katana", "Scimitar", "Rapier", "Halberd", "Whip", "Club", "Morning Star", "Trident", "Throwing Knives", "Blowgun" };
@@ -209,12 +209,15 @@ namespace Relationen
 
             //         dbContext.SaveChanges();
 
-            var allCharactersAfterDeletion = dbContext.Characters.ToList();
-            Console.WriteLine("Alle Characters nach dem Löschen von Duplikaten:");
-            foreach (var character in allCharactersAfterDeletion)
-            {
-                Console.WriteLine($"ID: {character.Id}, Name: {character.Name}");
-            }
+            // var allCharactersAfterDeletion = dbContext.Characters.ToList();
+            // Console.WriteLine("Alle Characters nach dem Löschen von Duplikaten:");
+            // foreach (var character in allCharactersAfterDeletion)
+            // {
+            //     Console.WriteLine($"ID: {character.Id}, Name: {character.Name}");
+            // }
+
+
+
         }
 
     }
