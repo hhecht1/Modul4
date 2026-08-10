@@ -33,7 +33,7 @@ namespace Relationen.Migrations
 
                     b.HasIndex("FactionsId");
 
-                    b.ToTable("CharacterFactions", (string)null);
+                    b.ToTable("Zwischentabelle", (string)null);
                 });
 
             modelBuilder.Entity("Relationen.Models.Backpack", b =>

@@ -48,7 +48,7 @@ namespace Relationen.Data
             modelBuilder.Entity<Character>()
                 .HasMany(c => c.Factions)
                 .WithMany(f => f.Characters)
-                .UsingEntity(j => j.ToTable("CharacterFactions")); // Optional: Eigener Name für die Join-Tabelle
+                .UsingEntity(j => j.ToTable("Zwischentabelle")); // Optional: Eigener Name für die Join-Tabelle
         }
 
 
