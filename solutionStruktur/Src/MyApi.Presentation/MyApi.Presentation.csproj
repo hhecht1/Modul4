@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyApi.Infrastructure\MyApi.Infrastructure.csproj" />
+    <ProjectReference Include="..\MyApi.Application\MyApi.Application.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
