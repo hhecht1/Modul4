@@ -10,7 +10,9 @@ namespace SimpleMVC.Controllers
         private static readonly List<Book> _books = new List<Book>
         {
             new Book { Id = 1, Title = "Der Alchimist", Author = "Paulo Coelho", Price = 12.99m },
-            new Book { Id = 2, Title = "1984", Author = "George Orwell", Price = 9.99m }
+            new Book { Id = 2, Title = "1984", Author = "George Orwell", Price = 9.99m },
+            new Book { Id = 3, Title = "Die Verwandlung", Author = "Franz Kafka", Price = 7.99m },
+            new Book { Id = 4, Title = "Der kleine Prinz", Author = "Antoine de Saint-Exupéry", Price = 8.99m },
         };
 
         // URL: /Home/Index oder einfach /
