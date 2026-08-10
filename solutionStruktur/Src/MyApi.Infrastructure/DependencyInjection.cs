@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using MyApi.Application.Abstractions.Repositories;
 using MyApi.Infrastructure.Persistence;
 
 namespace MyApi.Infrastructure;
