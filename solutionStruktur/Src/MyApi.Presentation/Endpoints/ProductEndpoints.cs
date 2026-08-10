@@ -1,8 +1,5 @@
-
 using MyApi.Presentation.Abstractions;
-using MyApi.Presentation.Endpoints;
-using MyApi.Products.Application.Handlers;
-using MyApi.Products.Application.Common.Interfaces;
+using MyApi.Application.Abstractions.Repositories;
 
 namespace MyApi.Presentation.Endpoints;
 
@@ -19,11 +16,11 @@ public class ProductEndpoints : IEndpoint
     }
 
     private static async Task<IResult> CreateProduct(
-        CreateProductCommand command,
-        CreateProductHandler handler,
+        IProductRepository repo,
         CancellationToken ct)
     {
-        var id = await handler.HandleAsync(command, ct);
+        var id = Guid.NewGuid();
+        // Platzhalter für Command-Verarbeitung
         return Results.Created($"/api/v1/products/{id}", new { Id = id });
     }
 
