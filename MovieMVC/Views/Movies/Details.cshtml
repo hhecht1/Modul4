@@ -1,0 +1,12 @@
+@model MovieMVC.Models.Movie
+
+<h2>Filmdetails</h2>
+
+<div>
+    <strong>Titel:</strong> @Model.Title <br />
+    <strong>Regisseur:</strong> @Model.Director <br />
+    <strong>Preis:</strong> @Model.Price.ToString("C")
+</div>
+
+<br />
+<a asp-action="Index">Zurück zur Liste</a>

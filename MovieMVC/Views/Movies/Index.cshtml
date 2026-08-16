@@ -1,0 +1,25 @@
+@model List<MovieMVC.Models.Movie>
+
+<h2>Filmliste</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Price</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td>@movie.Title</td>
+                <td>@movie.Director</td>
+                <td>@movie.Price</td>
+                <td>@movie.Id</td>
+            </tr>
+        }
+    </tbody>
+</table>
