@@ -7,7 +7,6 @@ C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Azure.Identity.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Humanizer.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Microsoft.Build.Framework.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -38,7 +37,9 @@ C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Microsoft.Extensions.Options.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Microsoft.Extensions.Primitives.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Microsoft.Identity.Client.dll
+C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Microsoft.Identity.Client.Broker.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Microsoft.Identity.Client.NativeInterop.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
@@ -145,6 +146,12 @@ C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\runtimes\linux-x64\native\libmsalruntime.so
+C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\runtimes\osx-arm64\native\msalruntime_arm64.dylib
+C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\runtimes\osx-x64\native\msalruntime.dylib
+C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\runtimes\win-arm64\native\msalruntime_arm64.dll
+C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\runtimes\win-x64\native\msalruntime.dll
+C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\runtimes\win-x86\native\msalruntime_x86.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Diagnostics.EventLog.Messages.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Diagnostics.EventLog.dll
 C:\Users\helge12\Desktop\c#\Modul4\EntetiyFramework\Relationen\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Security.Cryptography.Pkcs.dll
