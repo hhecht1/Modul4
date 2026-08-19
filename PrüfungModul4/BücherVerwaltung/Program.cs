@@ -2,13 +2,34 @@
 using BücherVerwaltung.Models;
 using Microsoft.EntityFrameworkCore;
 
+namespace BücherVerwaltung.Data
+{
+    public class BücherVerwaltungContext : DbContext
+    {
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Book> Books { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(AppContext.BaseDirectory)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .Build();
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
+            optionsBuilder.UseSqlServer(connectionString);
+        }
+    }
+}
+
 namespace BücherVerwaltung
 {
     class Program
     {
         static void Main(string[] args)
         {
-            using var context = new LibraryContext();
+            using var context = new BücherVerwaltungContext();
+            context.Database.EnsureCreated();
             var author = new Author
             {
                 Name = "Stephen King",
