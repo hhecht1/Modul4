@@ -50,6 +50,11 @@ public class LagerverwaltungContext : DbContext
 
         modelBuilder.Entity<Product>()
         .Property(p => p.Price)
+        .IsRequired()
+        .HasColumnType("decimal(10,2)");
+
+        modelBuilder.Entity<Product>()
+        .Property(p => p.Price)
         .HasPrecision(10, 2);
 
         modelBuilder.Entity<Supplier>()

@@ -50,7 +50,7 @@ public class Program
         foreach (var s in suplliers)
         {
 
-            decimal totalValue = s.Products.Sum(p => p.Price * p.Stock);
+            decimal totalValue = s.Products?.Sum(p => p.Price * p.Stock) ?? 0;
             Console.WriteLine($"Lieferant: {s.Name}, Email: {s.Email}, Gesamtwert: {totalValue}");
 
             foreach (var p in s.Products ?? Enumerable.Empty<Product>())
